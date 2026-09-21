@@ -1,30 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap');
 
 
 blockquote {
   font-style: italic
 }
 
-.boxBorder {
-     border: 0px solid #bc93a7;
-     padding: 10px;
-     outline: #bc93a7 solid 5px;
-     outline-offset: 5px;
-   }
-   
 
 /* -- Center page titles and remove white space -- */
 .title {
   text-align: left;
   margin-top: 1.5em !important;
   margin-bottom: 0.75em;
-  font-size: 60pt;
+  font-size: clamp(2.2rem, 6vw, 60pt);
 }
    
 
 /* -- Define the font type of the website's body -- */
 body {
-    font-family: 'Muli';
+    font-family: 'Mulish', 'Muli', 'Helvetica Neue', Arial, sans-serif;
     font-size: 20px;
 }
 
@@ -98,4 +91,241 @@ html {
 /* -- allows us to add borders to images -- */
 img[src*="#bordered"] {
    border: 2px solid black;
+}
+
+
+/* -- Keyboard focus -- */
+a:focus-visible {
+  outline: 2px solid #3f53c5;
+  outline-offset: 2px;
+}
+
+/* -- People: responsive card grid -- */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2em 1.5em;
+  margin-top: 1em;
+}
+
+.person {
+  text-align: center;
+}
+
+.person img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.person h3 {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin: 0.6em 0 0.1em;
+}
+
+.person .role {
+  font-size: 0.85em;
+  margin-bottom: 0.3em;
+}
+
+.person-links {
+  margin-bottom: 0.2em;
+}
+
+.person-links a {
+  font-size: 1.25em;
+  margin: 0 0.3em;
+  color: inherit;
+}
+
+.person-links a:hover {
+  color: #3f53c5;
+}
+
+.person-web {
+  font-size: 0.8em;
+}
+
+/* -- Publications: link badges -- */
+.boxBorder ul li {
+  margin-bottom: 0.6em;
+}
+
+.boxBorder span[title] > a {
+  display: inline-block;
+  font-size: 0.72em;
+  line-height: 1.5;
+  padding: 0 0.6em;
+  margin: 0.15em 0 0.15em 0.35em;
+  border: 1px solid #3f53c5;
+  border-radius: 1em;
+  background: #fff;
+  color: #3f53c5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.boxBorder span[title] > a:hover {
+  background: #3f53c5;
+  color: #fff;
+}
+
+.boxBorder span[title="award"] > a {
+  white-space: normal;
+}
+
+.boxBorder span[title] img {
+  height: 1.1em;
+  vertical-align: -0.2em;
+}
+
+
+/* -- Color scheme: project blue for navbar, links and headings -- */
+.navbar-inverse {
+  background-color: #3f53c5;
+  border-color: #3f53c5;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background-color: #2f3f9e;
+  color: #fff;
+}
+
+a {
+  color: #3f53c5;
+}
+
+a:hover {
+  color: #2f3f9e;
+}
+
+h1, h2, h3 {
+  color: #1f2a5c;
+}
+
+/* -- Readable line length for running text -- */
+.main-container p,
+.main-container li,
+.subtitle {
+  max-width: 68ch;
+}
+
+.people-grid p,
+.themes p {
+  max-width: none;
+}
+
+.project-meta {
+  font-size: 0.8em;
+  color: #4a5578;
+}
+
+/* -- Research themes -- */
+.themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0;
+}
+
+.theme {
+  border-top: 4px solid #3f53c5;
+  padding-top: 0.6em;
+}
+
+.theme h3 {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin: 0 0 0.3em;
+}
+
+.theme p {
+  font-size: 0.85em;
+}
+
+/* -- Figures on the project page -- */
+.figure-wide {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 1.5em 0;
+}
+
+/* -- Talks in CV layout -- */
+.talks {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  column-gap: 1.5em;
+  row-gap: 1em;
+  margin-top: 1em;
+}
+
+.talk-date {
+  font-size: 0.85em;
+  padding-top: 0.15em;
+}
+
+.talk-body {
+  position: relative;
+  padding-left: 1.5em;
+  max-width: 68ch;
+}
+
+.talk-body::before {
+  content: "\f02e";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: #3f53c5;
+}
+
+@media (max-width: 600px) {
+  .talks {
+    grid-template-columns: 1fr;
+    row-gap: 0.2em;
+  }
+  .talk-date:empty {
+    display: none;
+  }
+  .talk-body {
+    margin-bottom: 0.8em;
+  }
+}
+
+/* -- Footer with DFG funding note -- */
+.site-footer {
+  max-width: 940px;
+  margin: 3em auto 1.5em;
+  padding: 1.5em 15px 0;
+  border-top: 1px solid #c7d7e0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em 2em;
+  font-size: 0.75em;
+  color: #4a5578;
+}
+
+.site-footer img {
+  width: 240px;
+  height: auto;
+}
+
+.site-footer p {
+  margin: 0;
+  flex: 1 1 300px;
 }
