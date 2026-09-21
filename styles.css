@@ -117,7 +117,9 @@ a:focus-visible {
   max-width: 200px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 .person h3 {
@@ -328,4 +330,48 @@ h1, h2, h3 {
 .site-footer p {
   margin: 0;
   flex: 1 1 300px;
+}
+
+
+/* -- Placeholder for team members without photo -- */
+.avatar-placeholder {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #c7d7e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  color: #fff;
+}
+
+/* -- Collaborators -- */
+.collaborators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin: 1em 0 2em;
+}
+
+.collaborator {
+  border-left: 4px solid #3f53c5;
+  padding-left: 0.9em;
+}
+
+.collaborator h3 {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin: 0 0 0.3em;
+}
+
+.collaborator p {
+  font-size: 0.85em;
+  margin-bottom: 0.2em;
+}
+
+.collaborator .collab-note {
+  font-style: italic;
 }
